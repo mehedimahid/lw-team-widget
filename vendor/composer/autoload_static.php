@@ -22,8 +22,10 @@ class ComposerStaticInit3f51bbe31d3650223144d783f9c50a40
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'LW\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/LW_Custom_Widgets.php',
-        'LW\\widgets\\LW_widgets_class' => __DIR__ . '/../..' . '/app/widgets/LW_widgets_class.php',
+        'LW\\widgets\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/widgets/LW_Custom_Widgets.php',
+        'LW\\widgets\\TestWidgets\\LW_Test_Widgets' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/LW_Test_Widgets.php',
+        'LW\\widgets\\TestWidgets\\TestWidgetControlls' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/TestWidgetControlls.php',
+        'LW\\widgets\\TestWidgets\\TestWidgetsRender' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/TestWidgetsRender.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
