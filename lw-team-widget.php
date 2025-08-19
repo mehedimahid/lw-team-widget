@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: LW Custom Widgets
+Plugin Name: LW Team Widgets
 Plugin URI: 
 Description: A simple plugin that shows a welcome message to new visitors.
 Version: 1.0
