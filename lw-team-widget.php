@@ -11,12 +11,12 @@ License: GPL2
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
-use LW\TeamsWidgets;
+use LW\Teams;
 
 define( 'LW_DIR_PATH', plugin_dir_path( __FILE__ ) );
 require_once LW_DIR_PATH . 'vendor/autoload.php';
 
-add_action( 'plugins_loaded', 'lw_widgets' );
-function lw_widgets(){
-    new TeamsWidgets();
+add_action( 'plugins_loaded', 'lw_team' );
+function lw_team(){
+    new Teams();
 }

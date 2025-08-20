@@ -22,15 +22,12 @@ class ComposerStaticInit3f51bbe31d3650223144d783f9c50a40
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'LW\\TeamsWidgets' => __DIR__ . '/../..' . '/app/TeamsWidgets.php',
-        'LW\\teamswidgets\\LWTeams' => __DIR__ . '/../..' . '/app/teamswidgets/LWTeams.php',
-        'LW\\teamswidgets\\LW_Custom_Teams_Widgets' => __DIR__ . '/../..' . '/app/teamswidgets/LW_Custom_Teams_Widgets.php',
-        'LW\\teamswidgets\\LW_Teams_Widgets' => __DIR__ . '/../..' . '/app/teamswidgets/LW_Teams_Widgets.php',
-        'LW\\teamswidgets\\LW_teams_renders' => __DIR__ . '/../..' . '/app/teamswidgets/LW_teams_renders.php',
-        'LW\\widgets\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/widgets/LW_Custom_Widgets.php',
-        'LW\\widgets\\TestWidgets\\LW_Test_Widgets' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/LW_Test_Widgets.php',
-        'LW\\widgets\\TestWidgets\\TestWidgetControlls' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/TestWidgetControlls.php',
-        'LW\\widgets\\TestWidgets\\TestWidgetsRender' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/TestWidgetsRender.php',
+        'LW\\Teams' => __DIR__ . '/../..' . '/app/Teams.php',
+        'LW\\Teams\\LWTeams' => __DIR__ . '/../..' . '/app/Teams/LWTeams.php',
+        'LW\\Widgets\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/Widgets/LW_Custom_Widgets.php',
+        'LW\\Widgets\\TestWidgets\\LW_Test_Widgets' => __DIR__ . '/../..' . '/app/Widgets/TestWidgets/LW_Test_Widgets.php',
+        'LW\\Widgets\\TestWidgets\\TestWidgetControlls' => __DIR__ . '/../..' . '/app/Widgets/TestWidgets/TestWidgetControlls.php',
+        'LW\\Widgets\\TestWidgets\\TestWidgetsRender' => __DIR__ . '/../..' . '/app/Widgets/TestWidgets/TestWidgetsRender.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

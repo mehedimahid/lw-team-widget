@@ -1,6 +1,6 @@
 <?php
 
-namespace LW\widgets\TestWidgets;
+namespace LW\Widgets\TestWidgets;
 use Elementor\Controls_Manager;
 
 class TestWidgetControlls {

@@ -1,6 +1,6 @@
 <?php
 
-namespace LW\widgets\TestWidgets;
+namespace LW\Widgets\TestWidgets;
 use Elementor\Widget_Base;
 
 class LW_Test_Widgets extends Widget_Base{

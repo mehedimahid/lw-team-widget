@@ -1,8 +1,8 @@
 <?php
 
-namespace LW\widgets;
-use LW\widgets\TestWidgets\LW_Test_Widgets;
-
+namespace LW\Widgets;
+use LW\Widgets\TestWidgets\LW_Test_Widgets;
+use LW\Widgets\TeamsWidgets\LW_Custom_Teams_Widgets;
 class LW_Custom_Widgets
 {
     public function __construct(){
@@ -12,6 +12,7 @@ class LW_Custom_Widgets
 
     public function register_widgets($widgets_manager) {
         $widgets_manager->register(new LW_Test_Widgets());
+        $widgets_manager->register(new LW_Custom_Teams_Widgets());
     }
     public function add_widgets_categories($categorise_manager) {
         $categories = [];
