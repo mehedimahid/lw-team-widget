@@ -7,6 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'LW\\TeamsWidgets' => $baseDir . '/app/TeamsWidgets.php',
+    'LW\\teamswidgets\\LWTeams' => $baseDir . '/app/teamswidgets/LWTeams.php',
+    'LW\\teamswidgets\\LW_Custom_Teams_Widgets' => $baseDir . '/app/teamswidgets/LW_Custom_Teams_Widgets.php',
+    'LW\\teamswidgets\\LW_Teams_Widgets' => $baseDir . '/app/teamswidgets/LW_Teams_Widgets.php',
+    'LW\\teamswidgets\\LW_teams_renders' => $baseDir . '/app/teamswidgets/LW_teams_renders.php',
     'LW\\widgets\\LW_Custom_Widgets' => $baseDir . '/app/widgets/LW_Custom_Widgets.php',
     'LW\\widgets\\TestWidgets\\LW_Test_Widgets' => $baseDir . '/app/widgets/TestWidgets/LW_Test_Widgets.php',
     'LW\\widgets\\TestWidgets\\TestWidgetControlls' => $baseDir . '/app/widgets/TestWidgets/TestWidgetControlls.php',

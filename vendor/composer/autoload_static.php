@@ -22,6 +22,11 @@ class ComposerStaticInit3f51bbe31d3650223144d783f9c50a40
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'LW\\TeamsWidgets' => __DIR__ . '/../..' . '/app/TeamsWidgets.php',
+        'LW\\teamswidgets\\LWTeams' => __DIR__ . '/../..' . '/app/teamswidgets/LWTeams.php',
+        'LW\\teamswidgets\\LW_Custom_Teams_Widgets' => __DIR__ . '/../..' . '/app/teamswidgets/LW_Custom_Teams_Widgets.php',
+        'LW\\teamswidgets\\LW_Teams_Widgets' => __DIR__ . '/../..' . '/app/teamswidgets/LW_Teams_Widgets.php',
+        'LW\\teamswidgets\\LW_teams_renders' => __DIR__ . '/../..' . '/app/teamswidgets/LW_teams_renders.php',
         'LW\\widgets\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/widgets/LW_Custom_Widgets.php',
         'LW\\widgets\\TestWidgets\\LW_Test_Widgets' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/LW_Test_Widgets.php',
         'LW\\widgets\\TestWidgets\\TestWidgetControlls' => __DIR__ . '/../..' . '/app/widgets/TestWidgets/TestWidgetControlls.php',
