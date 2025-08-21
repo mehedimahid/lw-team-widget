@@ -1,0 +1,27 @@
+.lw-team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.lw-team-item{
+    border:1px solid #eee;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+.lw-team-member-img{
+    margin-bottom:10px;
+}
+.lw-team-thumb{
+    border-radius:5%;
+    width:100%;
+    object-fit:cover;
+}
+.lw-team-member-position{
+    font-weight:bold;
+    color:#555;
+}
+.lw-pagination{
+    margin-top:20px;
+    text-align:center;
+}

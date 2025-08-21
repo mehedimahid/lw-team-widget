@@ -1,8 +1,6 @@
 <?php
 namespace LW\Widgets\TeamsWidgets;
-use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
-use Elementor\Utils;
 class LW_Custom_Teams_Widgets extends Widget_Base{
     public function get_name() {
         return 'lw-teams';

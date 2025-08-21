@@ -4,12 +4,21 @@ namespace LW\Teams;
 class LWTeams
 {
     public function __construct(){
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('init', array($this, 'register_teams'));
         add_action('add_meta_boxes', array($this, 'add_meta_boxes'));
         add_action('save_post', array($this, 'save_meta_boxes'));
         add_action('after_setup_theme', [$this, 'add_image_size']);
     }
-
+    public function enqueue_assets()
+    {
+        wp_register_style(
+            'lw-teams-style',
+            LW_DIR_URL.'app/assets/css/teamStyle.css',
+            [],
+            '1.0.0'
+        );
+    }
     public function add_image_size(){
         add_image_size('lw-team-thumb', 300, 300, true);
     }
