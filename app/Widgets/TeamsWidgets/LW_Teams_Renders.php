@@ -22,7 +22,7 @@ class LW_Teams_Renders {
                 echo '<div class="lw-team-item" style="border:1px solid #eee;padding:15px;text-align:center;border-radius:10px;">';
 
                 if (has_post_thumbnail()) {
-                    echo '<div class="lw-team-img" style="margin-bottom:10px;">';
+                    echo '<div class="lw-team-member-img" style="margin-bottom:10px;">';
                     // ✅ custom image size ব্যবহার
                     the_post_thumbnail('lw-team-thumb', [
                         'style' => 'border-radius:5%; width:100%; object-fit:cover;'
@@ -30,33 +30,33 @@ class LW_Teams_Renders {
                     echo '</div>';
                 }
 
-                echo '<h3>' . esc_html(get_the_title()) . '</h3>';
+                echo '<h3 class="lw-team-member-name">' . esc_html(get_the_title()) . '</h3>';
 
                 // 📌 Position (taxonomy terms)
                 $positions = get_the_terms(get_the_ID(), 'member_position');
                 if ($positions && !is_wp_error($positions)) {
                     $pos_names = wp_list_pluck($positions, 'name');
-                    echo '<p class="lw-team-position" style="font-weight:bold;color:#555;">' . esc_html(implode(', ', $pos_names)) . '</p>';
+                    echo '<p class="lw-team-member-position" style="font-weight:bold;color:#555;">' . esc_html(implode(', ', $pos_names)) . '</p>';
                 }
 
                 // 📧 Email
                 $email = get_post_meta(get_the_ID(), '_lw_member_email', true);
                 if ($email) {
-                    echo '<p class="lw-team-email"><a href="mailto:' . esc_attr($email) . '">' . esc_html($email) . '</a></p>';
+                    echo '<p class="lw-team-member-email"><a href="mailto:' . esc_attr($email) . '">' . esc_html($email) . '</a></p>';
                 }
 
                 // 📱 Phone
                 $phone = get_post_meta(get_the_ID(), '_lw_member_phone', true);
                 if ($phone) {
-                    echo '<p class="lw-team-phone">' . esc_html($phone) . '</p>';
+                    echo '<p class="lw-team-member-phone">' . esc_html($phone) . '</p>';
                 }
 
 
-                echo '<div class="desc">' . wp_kses_post(get_the_content()) . '</div>';
+                echo '<div class="lw-team-member-desc">' . wp_kses_post(get_the_content()) . '</div>';
                 // 🏠 Address (optional)
                 $address = get_post_meta(get_the_ID(), '_lw_member_address', true);
                 if ($address) {
-                    echo '<p class="lw-team-address">' . esc_html($address) . '</p>';
+                    echo '<p class="lw-team-member-address">' . esc_html($address) . '</p>';
                 }
                 echo '</div>';
             }

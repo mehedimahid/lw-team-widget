@@ -18,11 +18,7 @@ class LW_Custom_Teams_Widgets extends Widget_Base{
         return ['lw-custom-category'];
     }
     protected function register_controls() {
-        $this->start_controls_section('content_section', [
-            'label' => __('Team Info', 'lw'),
-            'tab'   => Controls_Manager::TAB_CONTENT,
-        ]);
-        $this->end_controls_section();
+        LW_Teams_Widgets_Controller::register($this);
     }
 
     protected function render() {
