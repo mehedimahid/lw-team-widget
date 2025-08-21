@@ -21,7 +21,21 @@
     font-weight:bold;
     color:#555;
 }
-.lw-pagination{
-    margin-top:20px;
-    text-align:center;
+
+
+.lw-pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.lw-pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.lw-pagination li {
+    display: inline-block;
 }

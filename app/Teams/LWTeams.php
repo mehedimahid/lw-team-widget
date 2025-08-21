@@ -26,7 +26,7 @@ class LWTeams
         register_post_type(
              'lw-teams',[
             'labels' => [
-                'name'=>'Teams',
+                'name'=>'Team Members',
                 'singular_name'=>'Team',
                 'add_new'       => __('Add New Member', 'lw'),
                 'add_new_item'  => __('Add Team Member', 'lw'),
