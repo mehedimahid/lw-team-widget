@@ -39,3 +39,19 @@
 .lw-pagination li {
     display: inline-block;
 }
+
+.lw-team-grid.lw-column-1{
+    grid-template-columns: 1fr;
+}
+.lw-team-grid.lw-column-2{
+    grid-template-columns: repeat(2, 1fr);
+}
+.lw-team-grid.lw-column-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+.lw-team-grid.lw-column-4{
+    grid-template-columns: repeat(4, 1fr);
+}
+.lw-team-grid.lw-column-5{
+    grid-template-columns: repeat(5, 1fr);
+}

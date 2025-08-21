@@ -11,7 +11,9 @@ class LW_Custom_Teams_Widgets extends Widget_Base{
     public function get_icon() {
         return 'eicon-person';
     }
-
+    public function get_style_depends(): array {
+        return [ 'lw-teams-style' ];
+    }
     public function get_categories() {
         return ['lw-custom-category'];
     }

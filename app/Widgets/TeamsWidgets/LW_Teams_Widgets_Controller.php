@@ -12,10 +12,85 @@ class LW_Teams_Widgets_Controller
         self::teamsWidgetsController($widgets);
     }
     private static function teamsWidgetsController($widgets){
-        $widgets->start_controls_section('content_section', [
-            'label' => esc_html__('Teams Info', 'lw-team-widget'),
+        $widgets->start_controls_section('posts_control', [
+            'label' => esc_html__('Posts Control', 'lw-team-widget'),
             'tab' => Controls_Manager::TAB_CONTENT,
         ]);
+        $widgets->add_control(
+            'posts_per_page',
+            [
+                'label'   => __('Posts Per Page', 'lw'),
+                'type'    => Controls_Manager::NUMBER,
+                'default' => 3,
+                'min'     => 1,
+                'max'     => 50,
+            ]
+        );
+        $widgets->add_control(
+            'posts_per_column',
+            [
+                'label'   => __('Posts Per Column', 'lw'),
+                'type'    => Controls_Manager::SELECT,
+                'default' => '3',
+                'options' => [
+                    '1' => __('1 Column', 'lw'),
+                    '2' => __('2 Columns', 'lw'),
+                    '3' => __('3 Columns', 'lw'),
+                    '4' => __('4 Columns', 'lw'),
+                    '5' => __('5 Columns', 'lw'),
+                ],
+            ]
+        );
+        $widgets->add_control(
+            'posts_switch',
+            [
+                'label'   => __('Posts Switch', 'lw'),
+                'type'    => Controls_Manager::REPEATER,
+                'fields'  => [
+                    [
+                        'name'=> 'information',
+                        'label' => esc_html__( 'Information', 'textdomain' ),
+                        'type' => Controls_Manager::SELECT,
+                        'default'=>'',
+                        'options' => [
+                            'thumb' => __('Thumbnail', 'lw'),
+                            'name' => __('Name', 'lw'),
+                            'position' => __('Position', 'lw'),
+                            'email' => __('E-mail', 'lw'),
+                            'phone' => __('Phone Number', 'lw'),
+                            'description' => __('Description', 'lw'),
+                            'address' => __('Address', 'lw'),
+                            'shortcode' => __('Short Code', 'lw'),
+                        ],
+                    ],
+                ],
+                'default'=>[
+                    [
+                        'information' => 'thumb',
+                    ],
+                    [
+                        'information' => 'name',
+                    ],
+                    [
+                        'information' => 'position',
+                    ],
+                    [
+                        'information' => 'email',
+                    ],
+                    [
+                        'information' => 'phone',
+                    ],
+                    [
+                        'information' => 'address',
+                    ],
+                    [
+                        'information' => 'description',
+                    ],
+                ],
+                'title_field' => '{{{ information }}}',
+
+            ]
+        );
         $widgets->end_controls_section();
         //name style
         $widgets->start_controls_section('style_name_section', [
