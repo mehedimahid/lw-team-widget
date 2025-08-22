@@ -9,6 +9,7 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'LW\\Teams' => $baseDir . '/app/Teams.php',
     'LW\\Teams\\LWTeams' => $baseDir . '/app/Teams/LWTeams.php',
+    'LW\\Teams\\LWTeamsAjax' => $baseDir . '/app/Teams/LWTeamsAjax.php',
     'LW\\Widgets\\LW_Custom_Widgets' => $baseDir . '/app/Widgets/LW_Custom_Widgets.php',
     'LW\\Widgets\\TeamsWidgets\\LW_Custom_Teams_Widgets' => $baseDir . '/app/Widgets/TeamsWidgets/LW_Custom_Teams_Widgets.php',
     'LW\\Widgets\\TeamsWidgets\\LW_Teams_Renders' => $baseDir . '/app/Widgets/TeamsWidgets/LW_Teams_Renders.php',

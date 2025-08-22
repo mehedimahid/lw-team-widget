@@ -24,6 +24,7 @@ class ComposerStaticInit3f51bbe31d3650223144d783f9c50a40
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'LW\\Teams' => __DIR__ . '/../..' . '/app/Teams.php',
         'LW\\Teams\\LWTeams' => __DIR__ . '/../..' . '/app/Teams/LWTeams.php',
+        'LW\\Teams\\LWTeamsAjax' => __DIR__ . '/../..' . '/app/Teams/LWTeamsAjax.php',
         'LW\\Widgets\\LW_Custom_Widgets' => __DIR__ . '/../..' . '/app/Widgets/LW_Custom_Widgets.php',
         'LW\\Widgets\\TeamsWidgets\\LW_Custom_Teams_Widgets' => __DIR__ . '/../..' . '/app/Widgets/TeamsWidgets/LW_Custom_Teams_Widgets.php',
         'LW\\Widgets\\TeamsWidgets\\LW_Teams_Renders' => __DIR__ . '/../..' . '/app/Widgets/TeamsWidgets/LW_Teams_Renders.php',

@@ -1,0 +1,117 @@
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 1
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 1
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 1
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 1
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+
+Array
+(
+    [post_type] => lw-teams
+    [post_status] => publish
+    [posts_per_page] => 3
+    [paged] => 2
+)
+
+

@@ -1,44 +1,38 @@
 <?php
-namespace LW\Widgets\TeamsWidgets;
-use LW\Teams\LWTeamsAjax;
 
-class LW_Teams_Renders {
-    public static function output($widgets) {
-        $settings = $widgets->get_settings_for_display();
-        $posts_per_page = !empty($settings['posts_per_page']) ? $settings['posts_per_page'] : 1;
-        $posts_per_column = !empty($settings['posts_per_column']) ? $settings['posts_per_column'] : 3;
-        $fields           = !empty($settings['posts_switch']) ? wp_list_pluck($settings['posts_switch'], 'information') : [];
+namespace LW\Teams;
 
+class LWTeamsAjax
+{
+    public function __construct() {
+        add_action('wp_ajax_lw_load_teams', [$this, 'lw_load_teams_callback']);
+        add_action('wp_ajax_nopriv_lw_load_teams', [$this, 'lw_load_teams_callback']);
+    }
+    public static function lw_load_teams_callback()
+    {
+        check_ajax_referer('lw_teams_nonce', 'nonce');
+        $posts_per_page   = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : 3;
+        $posts_per_column = isset($_POST['posts_per_column']) ? intval($_POST['posts_per_column']) : 3;
+        $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+        $posts_switch = isset($_POST['posts_switch']) ? $_POST['posts_switch'] : [] ;
+        $current_page_id = isset($_POST['current_page_id']) ? $_POST['current_page_id'] : null ;
 
-        wp_enqueue_script('lw-teams-scripts');
-        wp_enqueue_style('lw-teams-style');
-        wp_localize_script(
-            'lw-teams-scripts',
-            'lwTeamsAjax', [
-            'ajaxurl' => admin_url('admin-ajax.php'),
-            'nonce'   => wp_create_nonce('lw_teams_nonce'),
-            'posts_per_page'   => $posts_per_page,
-            'posts_per_column' => $posts_per_column,
-            'fields'           => $fields,
-            'posts_switch'     => $settings['posts_switch'],
-            'current_page_id'  => get_the_ID(),
-        ]);
-
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
         $args = [
-            'post_type'      => 'lw-teams',
-            'post_status' =>'publish',
+            'post_type' => 'lw-teams',
+            'post_status' => 'publish',
             'posts_per_page' => $posts_per_page,
-            'paged'          => $paged,
+            'paged' => $paged,
         ];
 
         $query = new \WP_Query($args);
+        ob_start();
+
         if ($query->have_posts()) {
-            echo '<div  class="lw-team-grid lw-teams-container lw-column-'.esc_attr($posts_per_column).'">';
-            while ($query->have_posts()) {
+           while ($query->have_posts()) {
                 $query->the_post();
+
                 echo '<div class="lw-team-item">';
-                foreach ($settings['posts_switch'] as $index => $item){
+                foreach ($posts_switch as $index => $item){
                     switch ($item['information']) {
                         case 'thumb':
                             if (has_post_thumbnail()) {
@@ -79,29 +73,31 @@ class LW_Teams_Renders {
                             break;
                         case 'description':
                             echo '<div class="lw-team-member-desc">' . wp_kses_post(get_the_content()) . '</div>';
-                        break;
+                            break;
                     }
                 }
                 echo '</div>';
-            }
-            echo '</div>';
-            //  Pagination
-            $big = 999999999; // unique সংখ্যা
-            $pagination = paginate_links([
-                'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format'    => '?paged=%#%',
-                'current'   => max(1, $paged),
-                'total'     => $query->max_num_pages,
-                'prev_text' => __('« Prev', 'lw'),
-                'next_text' => __('Next »', 'lw'),
-                'type'      => 'list', // <ul><li> format
-            ]);
-            if ($pagination) {
-                echo '<div class="lw-pagination" data-page="'.esc_attr($paged).'" >' . $pagination . '</div>';
             }
             wp_reset_postdata();
         } else {
             echo '<p>' . __('No team members found.', 'lw') . '</p>';
         }
+        $html = ob_get_clean();
+        ob_start();
+        $big = 999999999; // need an unlikely integer
+        $pagination = paginate_links( [
+            'base'      => trailingslashit( get_permalink( $current_page_id ) ) . 'page/%#%/',
+            'format'    => '',
+            'current'   => max( 1, $paged ),
+            'total'     => $query->max_num_pages,
+            'type'      => 'plain',
+            'prev_text' => __('« Prev'),
+            'next_text' => __('Next »'),
+        ] );
+        ob_get_clean();
+        wp_send_json_success([
+            'html' => $html,
+            'pagination' => $pagination
+        ]);
     }
 }

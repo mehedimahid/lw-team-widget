@@ -9,9 +9,18 @@ class LWTeams
         add_action('add_meta_boxes', array($this, 'add_meta_boxes'));
         add_action('save_post', array($this, 'save_meta_boxes'));
         add_action('after_setup_theme', [$this, 'add_image_size']);
+        new LWTeamsAjax();
     }
     public function enqueue_assets()
     {
+        wp_register_script(
+                'lw-teams-scripts',
+            LW_DIR_URL.'app/assets/js/lwTeamsScript.js',
+            ['jquery'],
+            '1.0.0',
+            true
+        );
+
         wp_register_style(
             'lw-teams-style',
             LW_DIR_URL.'app/assets/css/teamStyle.css',
