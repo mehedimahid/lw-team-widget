@@ -55,3 +55,17 @@
 .lw-team-grid.lw-column-5{
     grid-template-columns: repeat(5, 1fr);
 }
+
+.lw-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #555;
+}
+
+.lw-teams-container.loading {
+    opacity: 0.5;
+    position: relative;
+}
